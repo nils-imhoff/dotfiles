@@ -1,0 +1,63 @@
+[user]
+	name = 
+	email = 
+[core]
+    editor = nvim                  # Default editor for commits, rebase etc. (vim, nano, code, emacs, etc.)
+    autocrlf = input              # Convert CRLF to LF on commit, and vice versa on checkout (for Windows)
+    # whitespace = fix             # Automatically fixes whitespace issues (trailing spaces, space-before-tab, etc.)
+
+[alias]
+    st = status -sb               # Short status
+    ci = commit                   # Short for commit
+    co = checkout                 # Short for checkout
+    br = branch                   # Short for branch
+    ll = log --oneline            # One line log
+    graph = log --oneline --graph --all --decorate
+                                  # Graphical representation of the commit tree
+    last = log -1 HEAD            # Show the last commit
+    unstage = reset HEAD --       # Unstage changes
+
+[color]
+    ui = auto                     # Colorize git outputs
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+
+[color "branch"]
+    current = yellow reverse      # Current branch
+    local = yellow                # Local branches
+    remote = green                # Remote branches
+
+[color "diff"]
+    meta = yellow                 # Metadata
+    frag = magenta bold           # Fragments
+    old = red bold                # Deleted lines
+    new = green bold              # Added lines
+
+[color "status"]
+    added = yellow                # Added
+    changed = green               # Modified
+    untracked = cyan              # Untracked files
+
+[push]
+    default = current             # Push only the current branch by default
+
+[diff]
+    tool = meld                   # Diff tool, can be any other like diffmerge, kdiff3, etc.
+
+[merge]
+    tool = meld                   # Merge tool, can be any other like diffmerge, kdiff3, etc.
+    ff = only                     # Only allow fast-forward merges globally
+
+[fetch]
+    prune = true                  # Automatically remove stale tracking branches
+
+[rebase]
+    autoSquash = true            # Automatically squash commits that have a message starting with squash! or fixup!
+
+[rerere]
+    enabled = true                # Reuse recorded resolutions of conflicted merges
+
+[credential]
+    helper = cache --timeout=3600 # Cache your credentials for an hour
